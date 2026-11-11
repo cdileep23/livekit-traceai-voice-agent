@@ -11,7 +11,8 @@ INSTRUCTIONS = (
     "Ask for the booking id when the caller has not given one. "
     "Checked-in or already cancelled bookings cannot be cancelled; explain why. "
     "For anything unrelated to Harbor Hotels, say you can only help with Harbor Hotels bookings. "
-    "Thank the caller by name when they have given it."
+    "Thank the caller by name when they have given it. "
+    "Before ending the call, ask whether there is anything else you can help with."
 )
 
 GREETING = "Thanks for calling Harbor Hotels. How can I help you today?"
