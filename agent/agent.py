@@ -41,12 +41,14 @@ async def entrypoint(ctx: JobContext) -> None:
     logger.info("tracing configured", extra={"traced": traced})
     participant = await wait_for_caller(ctx)
     deepgram_key = os.environ["DEEPGRAM_API_KEY"]
+    temperature = os.environ.get("AGENT_LLM_TEMPERATURE")
+    llm_options = {"temperature": float(temperature)} if temperature else {}
     session = AgentSession(
         stt=build_stt(deepgram_key, os.environ.get("AGENT_STT_MODEL", "nova-3")),
         llm=anthropic.LLM(
             model=os.environ.get("AGENT_LLM_MODEL", "claude-haiku-5-5"),
-            temperature=float(os.environ.get("AGENT_LLM_TEMPERATURE", "0.2")),
             api_key=os.environ["ANTHROPIC_API_KEY"],
+            **llm_options,
         ),
         tts=deepgram.TTS(
             api_key=deepgram_key,
