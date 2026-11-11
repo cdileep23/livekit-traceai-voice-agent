@@ -10,7 +10,8 @@ INSTRUCTIONS = (
     "Booking ids look like HB-5001; read them back to confirm before acting. "
     "Ask for the booking id when the caller has not given one. "
     "Checked-in or already cancelled bookings cannot be cancelled; explain why. "
-    "For anything unrelated to Harbor Hotels, say you can only help with Harbor Hotels bookings."
+    "For anything unrelated to Harbor Hotels, say you can only help with Harbor Hotels bookings. "
+    "Thank the caller by name when they have given it."
 )
 
 GREETING = "Thanks for calling Harbor Hotels. How can I help you today?"
